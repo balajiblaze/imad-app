@@ -5,15 +5,6 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var button = document.getElementById('counter');
-var counter = 0;
-
-button.onclick = function() {
-    counter = counter + 1;
-    var span = document.getElementById('count');
-        span.innerHTML = counter.toString();
-    
-};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
